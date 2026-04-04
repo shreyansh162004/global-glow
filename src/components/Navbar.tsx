@@ -94,7 +94,7 @@ const Navbar = ({ onCartOpen }: NavbarProps) => {
   );
 };
 
-function AnimatedMobileMenu({ open, links, currentPath }: { open: boolean; links: typeof links; currentPath: string }) {
+function AnimatedMobileMenu({ open, links: navLinks, currentPath }: { open: boolean; links: Array<{ to: string; label: string }>; currentPath: string }) {
   if (!open) return null;
   return (
     <motion.div
