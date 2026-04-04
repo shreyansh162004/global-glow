@@ -40,7 +40,7 @@ const Contact = () => (
                 </div>
                 <div>
                   <p className="text-sm font-medium text-foreground">Address</p>
-                  <p className="text-sm">Wright Town, Jabalpur, MP 482002</p>
+                  <p className="text-sm">Rasal Chowk, Jain Tower, Hotel Samdariya, Jabalpur, MP 482001</p>
                 </div>
               </div>
               <div className="flex items-center gap-3 text-muted-foreground">
@@ -59,13 +59,13 @@ const Contact = () => (
         <ScrollReveal direction="right">
           <div className="glass-card overflow-hidden rounded-xl h-full min-h-[300px]">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d117251.51707842882!2d79.87786295!3d23.1814876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981ae1a5a04ff23%3A0x5c8e3c00afb8a1f0!2sJabalpur%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3668.0!2d79.9556!3d23.1687!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3981b1a5a04ff23%3A0x1f0062505c97cb!2sGlobal+Enterprises!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: 300 }}
               allowFullScreen
               loading="lazy"
-              title="Location"
+              title="Global Enterprises Location"
             />
           </div>
         </ScrollReveal>

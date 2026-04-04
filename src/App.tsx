@@ -8,6 +8,7 @@ import CartDrawer from "@/components/CartDrawer";
 import Chatbot from "@/components/Chatbot";
 import LoadingScreen from "@/components/LoadingScreen";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 import Index from "./pages/Index";
 import Products from "./pages/Products";
 import ProductDetail from "./pages/ProductDetail";
@@ -32,6 +33,7 @@ const App = () => {
       <TooltipProvider>
         <Toaster />
         <BrowserRouter>
+          <ScrollToTop />
           <LoadingScreen isLoading={loading} />
           <Navbar onCartOpen={() => setCartOpen(true)} />
           <CartDrawer open={cartOpen} onClose={() => setCartOpen(false)} />

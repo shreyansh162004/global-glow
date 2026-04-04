@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { MessageCircle, X, ArrowRight } from "lucide-react";
+import { X, ArrowRight } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 type Step = "lang" | "budget" | "usage" | "brand" | "done";
@@ -39,12 +39,7 @@ const Chatbot = () => {
     setLang(l);
     addMsg("user", l === "en" ? "English" : "हिंदी");
     setTimeout(() => {
-      addMsg(
-        "bot",
-        l === "en"
-          ? "Great! What's your budget range?"
-          : "बढ़िया! आपका बजट क्या है?"
-      );
+      addMsg("bot", l === "en" ? "Great! What's your budget range?" : "बढ़िया! आपका बजट क्या है?");
       setStep("budget");
     }, 300);
   };
@@ -92,15 +87,19 @@ const Chatbot = () => {
 
   return (
     <>
-      {/* Floating button */}
+      {/* Floating button with robot */}
       <motion.button
         onClick={() => { setOpen(true); reset(); }}
-        className="fixed bottom-6 right-6 z-40 flex items-center gap-2 px-5 py-3 rounded-full bg-primary text-primary-foreground font-bold shadow-lg animate-glow-pulse"
+        className="fixed bottom-6 right-6 z-40 flex items-center gap-3 px-5 py-3 rounded-full bg-primary text-primary-foreground font-bold shadow-lg animate-glow-pulse group"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        <MessageCircle className="w-5 h-5" />
-        <span className="hidden sm:inline text-sm">Find your perfect laptop 💻</span>
+        {/* Robot emoji with waving hand */}
+        <span className="text-2xl">🤖</span>
+        <span className="hidden sm:flex items-center gap-1 text-sm">
+          Find your perfect laptop
+          <span className="inline-block origin-bottom-right animate-wave text-lg">👋</span>
+        </span>
       </motion.button>
 
       {/* Chat window */}
@@ -114,9 +113,12 @@ const Chatbot = () => {
           >
             {/* Header */}
             <div className="flex items-center justify-between px-4 py-3 bg-primary text-primary-foreground">
-              <div>
-                <p className="font-heading font-bold text-sm">Global Enterprises</p>
-                <p className="text-xs opacity-80">Laptop Assistant</p>
+              <div className="flex items-center gap-2">
+                <span className="text-xl">🤖</span>
+                <div>
+                  <p className="font-heading font-bold text-sm">Global Enterprises</p>
+                  <p className="text-xs opacity-80">Laptop Assistant</p>
+                </div>
               </div>
               <button onClick={() => setOpen(false)} className="p-1 hover:bg-primary-foreground/20 rounded-full transition-colors">
                 <X className="w-4 h-4" />
