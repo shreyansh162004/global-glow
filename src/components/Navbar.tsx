@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { ShoppingCart, Menu, X } from "lucide-react";
 import { getCart } from "@/data/cart";
+import logo from "@/assets/logo.jpg";
 
 interface NavbarProps {
   onCartOpen: () => void;
@@ -39,16 +40,21 @@ const Navbar = ({ onCartOpen }: NavbarProps) => {
   return (
     <motion.nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        scrolled ? "bg-background/80 backdrop-blur-xl border-b border-border" : "bg-transparent"
+        scrolled
+          ? "bg-card/90 backdrop-blur-xl border-b border-border shadow-lg shadow-primary/5"
+          : "bg-transparent"
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
       <div className="container mx-auto px-4 flex items-center justify-between h-16 md:h-20">
-        <Link to="/" className="flex items-center gap-2">
-          <span className="text-xl md:text-2xl font-heading font-bold text-gradient">Global</span>
-          <span className="text-sm font-body text-muted-foreground hidden sm:inline">Enterprises</span>
+        <Link to="/" className="flex items-center gap-3">
+          <img src={logo} alt="Global Enterprises" className="w-10 h-10 rounded-full object-cover border border-primary/20" />
+          <div className="flex flex-col">
+            <span className="text-lg md:text-xl font-heading font-bold text-gradient leading-tight">Global</span>
+            <span className="text-[10px] font-body text-muted-foreground tracking-wider uppercase hidden sm:inline">Enterprises</span>
+          </div>
         </Link>
 
         <div className="hidden md:flex items-center gap-1">
@@ -101,7 +107,7 @@ function AnimatedMobileMenu({ open, links: navLinks, currentPath }: { open: bool
       initial={{ opacity: 0, height: 0 }}
       animate={{ opacity: 1, height: "auto" }}
       exit={{ opacity: 0, height: 0 }}
-      className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
+      className="md:hidden bg-card/95 backdrop-blur-xl border-b border-border"
     >
       <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
         {navLinks.map((link) => (

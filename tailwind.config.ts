@@ -14,8 +14,8 @@ export default {
     },
     extend: {
       fontFamily: {
-        heading: ["Poppins", "sans-serif"],
-        body: ["Inter", "sans-serif"],
+        heading: ["Space Grotesk", "sans-serif"],
+        body: ["DM Sans", "sans-serif"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -105,6 +105,16 @@ export default {
           "0%, 100%": { transform: "translateY(0px)" },
           "50%": { transform: "translateY(-10px)" },
         },
+        wave: {
+          "0%": { transform: "rotate(0deg)" },
+          "10%": { transform: "rotate(14deg)" },
+          "20%": { transform: "rotate(-8deg)" },
+          "30%": { transform: "rotate(14deg)" },
+          "40%": { transform: "rotate(-4deg)" },
+          "50%": { transform: "rotate(10deg)" },
+          "60%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(0deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -114,6 +124,7 @@ export default {
         "scale-in": "scale-in 0.5s ease-out",
         "glow-pulse": "glow-pulse 2s ease-in-out infinite",
         float: "float 3s ease-in-out infinite",
+        wave: "wave 2.5s ease-in-out infinite",
       },
     },
   },
