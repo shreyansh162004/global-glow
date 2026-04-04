@@ -104,7 +104,7 @@ function AnimatedMobileMenu({ open, links: navLinks, currentPath }: { open: bool
       className="md:hidden bg-background/95 backdrop-blur-xl border-b border-border"
     >
       <div className="container mx-auto px-4 py-4 flex flex-col gap-2">
-        {links.map((link) => (
+        {navLinks.map((link) => (
           <Link
             key={link.to}
             to={link.to}
